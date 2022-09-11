@@ -1,42 +1,22 @@
 #!/usr/bin/python3
 
 from pyrob.api import *
-from task_24 import fill_cross
-
-def fill_crosses_to_right(N):
-    for _ in range(N):
-        fill_cross()
-        move_right()
-        move_right()
-        move_right()
-        move_down()
-
-def fill_crosses_to_left(N):
-    for _ in range(9):
-        fill_cross()
-        for __ in range(5):
-            move_left()
-        move_down()
+from task_25 import fill_crosses_line
 
 
 @task(delay=0.02)
 def task_2_4():
-    move_down()
-    for __ in range(2):
-        fill_crosses_to_right(9)
-        fill_cross()
-        for _ in range(5):
-            move_down()
-        move_left()
-        fill_crosses_to_left(9)
-        fill_cross()
-        for _ in range(5):
-            move_down()
-        move_left()
-    fill_crosses_to_right(9)
-    fill_cross()
-    for _ in range(37):
-        move_left()
+    horiz_number = 10
+    vert_number = 5
+    for n in range(vert_number):
+        move_down()
+        fill_crosses_line(horiz_number)
+        for _ in range((horiz_number - 1) * 4):
+            move_left()
+        if n < vert_number - 1:
+            for _ in range(4):
+                move_down()
+
 
 if __name__ == '__main__':
     run_tasks()
