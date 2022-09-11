@@ -1,2 +1,1 @@
-# Лабы курса МФТИ "Алгоритмы на Python 3"
-
+# Courses, practice etc.
