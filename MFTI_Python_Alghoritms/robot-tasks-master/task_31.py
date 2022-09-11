@@ -8,7 +8,6 @@ def task_8_30():
     turn_flag = False
     while True:
         if not wall_is_beneath():
-            number_of_turns = 0
             turn_flag = False
             move_down()
         else:

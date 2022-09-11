@@ -19,8 +19,7 @@ def fill_cross():
 
 @task
 def task_2_1():
-    move_down()
-    move_down()
+    move_down(2)
     move_right()
     fill_cross()
 

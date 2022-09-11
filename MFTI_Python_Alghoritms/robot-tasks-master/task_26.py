@@ -11,11 +11,9 @@ def task_2_4():
     for n in range(vert_number):
         move_down()
         fill_crosses_line(horiz_number)
-        for _ in range((horiz_number - 1) * 4):
-            move_left()
+        move_left((horiz_number - 1) * 4)
         if n < vert_number - 1:
-            for _ in range(4):
-                move_down()
+            move_down(4)
 
 
 if __name__ == '__main__':

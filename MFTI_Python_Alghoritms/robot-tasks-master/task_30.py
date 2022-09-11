@@ -3,11 +3,6 @@
 from pyrob.api import *
 
 
-def steps_left(steps):
-    for _ in range(steps):
-        move_left()
-
-
 @task(delay=0.01)
 def task_9_3():
     diag1 = 0
@@ -19,7 +14,7 @@ def task_9_3():
         else:
             break
     diag2 = room_size - 1
-    steps_left(room_size - 1)
+    move_left(room_size - 1)
     for row in range(room_size):
         for cell in range(room_size):
             if diag1 == cell or diag2 == cell:
@@ -30,7 +25,7 @@ def task_9_3():
                 move_right()
         diag1 += 1
         diag2 -= 1
-        steps_left(room_size - 1)
+        move_left(room_size - 1)
         if row < room_size - 1:
             move_down()
 
