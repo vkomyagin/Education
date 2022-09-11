@@ -8,13 +8,15 @@ def circle(diam):
         turtle.left(r)
         turtle.forward(f)
 
-turtle.shape('turtle')    
-N = 6
-R = 360 / N
-D = 100
-for i in range (N):
-    circle(D)
-    turtle.left(R)
+if __name__ == '__main__':
+
+    turtle.shape('turtle')
+    N = 6
+    R = 360 / N
+    D = 100
+    for i in range (N):
+        circle(D)
+        turtle.left(R)
 
 
     
