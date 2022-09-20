@@ -2,6 +2,7 @@ import graphics as gr
 
 
 def draw_drive(x, y):
+    """Draw the rectangle spaceship drive at x,y coordinates in window"""
     drive = gr.Rectangle(gr.Point(x, y), gr.Point(x + 30, y + 20))
     drive.setFill('brown')
     drive.draw(window)
