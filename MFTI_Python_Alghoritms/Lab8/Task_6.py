@@ -1,16 +1,15 @@
-"""Кривая дракона"""
+"""Кривая Леви"""
 
 import turtle
 import time
 
-global angle
 
 def draw(l, n):
     # print(n)
     if n == 0:
-        turtle.right(45)
+        turtle.left(45)
         turtle.forward(l)
-        turtle.left(90)
+        turtle.right(90)
         turtle.forward(l)
         turtle.left(45)
         return

@@ -1,21 +1,36 @@
 import turtle
+import time
+
+"""Кривая Коха"""
+
 
 def draw(l, n):
+    # print(n)
     if n == 0:
-        turtle.left(180)
+        turtle.forward(l)
+        turtle.left(60)
+        turtle.forward(l)
+        turtle.right(120)
+        turtle.forward(l)
+        turtle.left(60)
+        turtle.forward(l)
         return
 
-    x = l / (n + 1)
-    for i in range(n):
-        turtle.forward(x)
-        turtle.left(45)
-        draw(0.5 * x * (n - i - 1), n - i - 1)
-        turtle.left(90)
-        draw(0.5 * x * (n - i - 1), n - i - 1)
-        turtle.right(135)
+    x = l / (n + 1) ** 0.6
 
-    turtle.forward(x)
-    turtle.left(180)
-    turtle.forward(l)
+    draw(0.3 * x * n, n - 1)
+    turtle.left(60)
+    draw(0.3 * x * n, n - 1)
+    turtle.right(120)
+    draw(0.3 * x * n, n - 1)
+    turtle.left(60)
+    draw(0.3 * x * n, n - 1)
+    # time.sleep(2)
 
-draw(400, 3)
+
+if __name__ == '__main__':
+    turtle.pendown()
+    turtle.speed('fastest')
+    draw(100, 4)
+    print('Done')
+    time.sleep(100)

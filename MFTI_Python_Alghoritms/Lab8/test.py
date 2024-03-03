@@ -18,4 +18,4 @@ def draw(l, n):
     turtle.left(180)
     turtle.forward(l)
 
-draw(400, 3)
+draw(200, 5)
